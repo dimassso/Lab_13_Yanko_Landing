@@ -1,0 +1,171 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Шапка сайту */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-text {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 36px;
+    position: relative;
+}
+
+.header-text::before,
+.header-text::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 20px;
+    height: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-text::before {
+    left: -30px;
+}
+
+.header-text::after {
+    right: -30px;
+}
+
+/* Стилі для основного контейнера */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+/* Стилі для банерів */
+.block {
+    background-color: #ddd;
+    padding: 0;
+    aspect-ratio: 2 / 1;  /* Змінено на 2:1 для зменшення висоти */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.block:hover {
+    transform: scale(1.4);
+    z-index: 10;
+}
+
+/* Стилі для текстових секцій */
+.text-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.text-block {
+    background-color: #f4f4f4;
+    padding: 20px;
+    height: 200px;  /* Висота секції */
+    overflow-y: scroll;  /* Прокрутка */
+    font-size: 16px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-block p {
+    margin: 10px 0;
+}
+
+/* Стилі для футера */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info {
+    margin-bottom: 20px;
+}
+
+footer form input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+}
+
+footer form button {
+    padding: 10px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+}
+
+footer nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+/* Стилі для fixed елемента */
+.fixed-element {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.fixed-element:hover {
+    transform: scale(1.2);
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .text-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-info {
+        font-size: 14px;
+    }
+}
